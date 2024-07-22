@@ -49,9 +49,25 @@
                 color: #fff;
             }
 
-            img {
-                height: 2.5rem;
-                border-radius: 100rem;
+            .profile {
+                margin-left: 1rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    position: absolute;
+
+                    &.img {
+                        height: 2.5rem;
+                        border-radius: 100rem;
+                    }
+
+                    &.overlay {
+                        height: 3.5rem;
+                    }
+                }
             }
         }
     }
@@ -87,10 +103,28 @@
             flex-direction: row;
             align-items: center;
             gap: 2rem;
-    
-            img {
-                height: 4.5rem;
-                border-radius: 100rem;
+
+            .profile {
+                width: 4.5rem;
+                height: 6rem;
+                margin-left: 1rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    position: absolute;
+
+                    &.img {
+                        height: 4.5rem;
+                        border-radius: 100rem;
+                    }
+
+                    &.overlay {
+                        height: 6rem;
+                    }
+                }
             }
     
             .text {

@@ -8,13 +8,19 @@
     <ng-container *ngIf="user">
         <div class="user" (click)="userMenu(true)">
             <p>{{ user.username }}</p>
-            <img [src]="user.profilepicture.s128">
+            <div class="profile">
+                <img [src]="user.profilepicture.s128" class="img">
+                <img src="/assets/symbols/profile-foam.svg" class="overlay">
+            </div>
         </div>
 
         <div class="user-menu" id="user-menu">
             <div class="menu">
                 <div class="info">
-                    <img [src]="user.profilepicture.s128">
+                    <div class="profile">
+                        <img [src]="user.profilepicture.s128" class="img">
+                        <img src="/assets/symbols/profile-foam.svg" class="overlay">
+                    </div>
                     <div class="text">
                         <h3>{{ user.username }}</h3>
                         <h5>{{ user.firstname }}   {{ user.lastname }}</h5>
