@@ -1,0 +1,10 @@
+<nav>
+    <a routerLink="/">
+        <mat-icon>home</mat-icon>
+        <p>Home</p>
+    </a>
+    <a routerLink="/esm" *ngIf="hasPermission('esm')">
+        <mat-icon>tv</mat-icon>
+        <p>ESM</p>
+    </a>
+</nav>

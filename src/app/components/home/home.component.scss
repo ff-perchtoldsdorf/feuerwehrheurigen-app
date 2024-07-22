@@ -1,0 +1,51 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+
+    .clock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 8rem;
+        margin-left: auto;
+
+        .time {
+            font-size: 3rem;
+            font-weight: 500;
+            color: var(--blue);
+        }
+
+        .date {
+            margin-top: -1rem;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--blue);
+        }
+    }
+
+    .text {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        img {
+            width: 10rem;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: var(--blue);
+        }
+    }
+}

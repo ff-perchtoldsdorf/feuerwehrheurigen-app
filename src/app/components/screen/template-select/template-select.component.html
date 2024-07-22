@@ -1,0 +1,9 @@
+<h1>ESM Templates</h1>
+
+<div class="list">
+    <ng-container *ngFor="let template of screenTemplates">
+        <a class="template" [routerLink]="'/esm/gallery/' + template.templateUuid">
+            <h3>{{ template.name }}</h3>
+        </a>
+    </ng-container>
+</div>

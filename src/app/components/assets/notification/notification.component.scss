@@ -1,0 +1,144 @@
+:host {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .notifications {
+        width: fit-content;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        // height: 35vh;
+        // overflow-y: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        // mask-image: linear-gradient(to bottom, transparent 0%, black 10%);
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1.5rem;
+            // height: 100%;
+            min-height: fit-content;
+
+            .notification {
+                width: 30rem;
+                min-height: 3rem;
+                height: fit-content;
+                max-width: 80vw;
+                background-color: #ffffff;
+                padding: .75rem;
+                border-radius: .5rem;
+                backdrop-filter: blur(3px);
+                box-shadow: .5rem .5rem 1rem #00000033;
+                position: relative;
+                overflow: hidden;
+                pointer-events: all;
+                display: flex;
+                flex-direction: auto;
+    
+                &.type__error {
+                    background-color: #ae1306BB;
+                }
+    
+                &.type__warning {
+                    background-color: #ee9300BB;
+                }
+    
+                &.type__info {
+                    background-color: #00e5cfBB;
+                }
+    
+                &.type__success {
+                    background-color: #0fe43bBB;
+                }
+    
+                &.type__default {
+                    background-color: #f5f5f5BB;
+                }
+    
+                .ol {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 100;
+                    pointer-events: none;
+    
+                    .timer {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 4px;
+                        content: '';
+                        background-color: #00000033;
+                        animation-name: timerRun;
+                        animation-timing-function: linear;
+                        animation-play-state: running;
+                        animation-fill-mode: forwards;
+                    }
+                }
+
+                .btn {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+                    margin-right: .5rem;
+                    height: 100%;
+
+                    button {
+                        cursor: pointer;
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+                        color: #00000033;
+                    }
+                }
+
+                .text {
+                    display: flex;
+                    flex-direction: column;
+                    height: fit-content;
+                    gap: .25rem;
+
+                    h3 {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        margin: 0;
+                    }
+
+                    p {
+                        font-size: .85rem;
+                        margin: 0;
+                        white-space: pre-wrap;
+                    }
+                }
+            }
+        }
+
+        
+    }
+}
+
+@keyframes timerRun {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    :host {
+        .notifications {
+            .list {
+                margin: 1rem 1rem calc(1rem + var(--nav-top-height)) 1rem !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+<ng-container *ngIf="hasPermission && template">
+    <h1>{{ template.name }}</h1>
+
+    <div class="editor">
+
+        <div class="list">
+            <div class="settings">
+                <button (click)="addNewImage()">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+            <div class="images">
+                <ng-container *ngFor="let image of template.settings.gallery.images">
+                    <a (click)="selectImage(image)" [ngClass]="{ 'active': image == selectedImage, 'disabled': image.hide}">{{ image.text }}</a>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="editor___image">
+            <ng-container *ngIf="selectedImage">
+                <div class="text">
+                    <h3>Text</h3>
+                    <textarea [(ngModel)]="selectedImage.text" name="imageText"></textarea>
+                </div>
+
+                <div class="gallery">
+                    <ng-container *ngFor="let image of images">
+                        <div [ngClass]="{ 'image': true, 'active': image == selectedImage.image}" (click)="selectSelectedImageImage(image)">
+                            <img [src]="image" alt="image">
+                        </div>
+                    </ng-container>
+                </div>
+            </ng-container>
+        </div>
+
+    </div>
+
+    <div class="btns">
+        <button routerLink="/esm/gallery">Abbrechen</button>
+        <button (click)="saveTemplate()" class="primary">Speichern</button>
+    </div>
+
+</ng-container>

@@ -1,0 +1,21 @@
+<div class="notifications">
+    <div class="list">
+        <ng-container *ngFor="let notification of notifications">
+            <div [ngClass]="['notification', 'type__' + notification.type]">
+                <div class="ol">
+                    <span class="timer" [ngStyle]="{'animation-duration': notification.timeout + 'ms'}"></span>
+                </div>
+                <div class="btn">
+                    <button (click)="removeNotification(notification)">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </div>
+                <div class="text">
+                    <h3>{{ notification.title }}</h3>
+                    <p>{{ notification.message }}</p>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    
+</div>
