@@ -3,4 +3,33 @@
         <img src="/assets/icons/ff-events_logo.svg">
         <h2>Events</h2>
     </div>
+
+    <span class="space"></span>
+    <ng-container *ngIf="user">
+        <div class="user" (click)="userMenu(true)">
+            <p>{{ user.username }}</p>
+            <img [src]="user.profilepicture.s128">
+        </div>
+
+        <div class="user-menu" id="user-menu">
+            <div class="menu">
+                <div class="info">
+                    <img [src]="user.profilepicture.s128">
+                    <div class="text">
+                        <h3>{{ user.username }}</h3>
+                        <h5>{{ user.firstname }}   {{ user.lastname }}</h5>
+                    </div>
+                </div>
+                <div class="btns">
+                    <button (click)="logout()">
+                        <mat-icon>logout</mat-icon>
+                    </button>
+                    <a [href]="environment.domain.dash + '/settings'" target="_blank">
+                        <mat-icon>settings</mat-icon>
+                    </a>
+                </div>
+            </div>
+            <span class="close" (click)="userMenu(false)"></span>
+        </div>
+    </ng-container>
 </div>
