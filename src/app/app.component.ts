@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
     this.authService.session().subscribe(
       (session: Session) => {
         if(!session.loggedIn) {
-          window.location.href = environment.domain.auth + 'login?redirect=dashboard';
+          window.location.href = environment.domain.auth + 'login?redirect=event';
         } else {
           this.loadCss();
           this.loadPermissions();
